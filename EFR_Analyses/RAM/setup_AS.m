@@ -4,14 +4,15 @@
 close all;
 clear;
 
-condition = 'Baseline';
-subj = 'Q427';
+condition = 'Carboplatin';
+subj = 'Q403';
+search_str = 'p*RAM*503_60*.mat';
+% search_str = 'p*FFR_REV_Swept*dbdrop__*.mat';
 fmod = 103;
 
 uname = 'sivaprakasaman';
-prefix = ['/media/',uname,'/AndrewNVME/Pitch_Study/Pitch_Diagnostics_SH_AS/EFR_RAM/Chin/'];
+prefix = ['/media/',uname,'/AndrewNVME/Pitch_Study/PilotModulationEnhancementARO2024/EFR_sweptPitch/Chin/'];
 suffix = [condition,'/',subj];
 
 datapath = [prefix,suffix];
-
 processChin;

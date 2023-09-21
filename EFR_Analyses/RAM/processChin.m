@@ -19,7 +19,7 @@ frames = round(t_win*fs);
 %% Import data
 cwd = pwd;
 cd(datapath)
-datafile = {dir(fullfile(cd,'p*RAM*.mat')).name};
+datafile = {dir(fullfile(cd,search_str)).name};
 load(datafile{1});
 fname_out = [datafile{1}(1:end-4),'_matlab.mat'];
 cd(cwd);

@@ -18,7 +18,7 @@ LOCS = zeros(1,harmonics);
 for i=1:harmonics
     
     %figure out the +/- range of frequencies to take max
-    r = DFT'.*((f>(i*F0-5)).*(f<(i*F0+5)));
+    r = DFT'.*((f>(i*F0-10)).*(f<(i*F0+10)));
     [PKS(i),ind] = max(r);
     LOCS(i) = f(ind);
     
