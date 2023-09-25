@@ -6,13 +6,14 @@ close all;
 clear;
 
 condition = 'Carboplatin';
-protocol = 'EFR_RAM';
+protocol = 'EFR_sweptPitch';
 subj = 'Q403_awake';
-ram_sam = 'SAM';
-freq = '503';
-noise = '40dB';
+swp_rnk = '_SweptRank';
+% swp_rnk = 'REV_SweptRank';
+freq = '103';
+noise = '_20_';
 
-search_str = ['p*',ram_sam,'*',freq,'*_',noise,'.mat'];
+search_str = ['p*',swp_rnk,'*',freq,'*',noise,'*.mat'];
 
 fmod = 103;
 
@@ -25,6 +26,6 @@ cwd = pwd;
 cd(datapath)
 datafile = {dir(fullfile(cd,search_str)).name};
 
-write_out = [subj,'_',condition,'_',ram_sam,'_',freq,'_',noise];
+write_out = [subj,'_',condition,'_',swp_rnk,'_',freq,'_',noise];
 
 processChin;
