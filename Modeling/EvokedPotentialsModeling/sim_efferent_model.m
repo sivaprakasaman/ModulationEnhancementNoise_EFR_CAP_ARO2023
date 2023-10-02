@@ -141,7 +141,7 @@ arguments
     args.fs {mustBeGreaterThanOrEqual(args.fs,50e3), mustBeLessThanOrEqual(args.fs,200e3)} = 100e3
     args.cohc {mustBeGreaterThanOrEqual(args.cohc, 0.0), mustBeLessThanOrEqual(args.cohc, 1.0)} = 1.0
     args.cihc {mustBeGreaterThanOrEqual(args.cihc, 0.0), mustBeLessThanOrEqual(args.cihc, 1.0)} = 1.0
-    args.species {mustBeMember(args.species, [1, 2, 3])} = 1
+    args.species {mustBeMember(args.species, [1, 2, 3])} = 2
 	args.powerlaw_mode {mustBeMember(args.powerlaw_mode, [1, 2])} = 2
     args.ic_tau_e {mustBeGreaterThan(args.ic_tau_e, 0.0)} = 1e-3
     args.ic_tau_i {mustBeGreaterThan(args.ic_tau_i, 0.0)} = 2e-3
