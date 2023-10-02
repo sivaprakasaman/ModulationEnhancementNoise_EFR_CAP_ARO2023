@@ -14,4 +14,4 @@ delete *.mex*;
 mex -c complex.c sfie.c adaptation.c model.c;  
 
 % Compile Mex wrapper
-mex sim_efferent_model_mex.c complex.o sfie.o adaptation.o model.o;
+mex sim_efferent_model_mex.c complex.obj sfie.obj adaptation.obj model.obj;
