@@ -29,7 +29,7 @@ switch model_name
         %KEY Differences:
             % - No IC response, only simulating an HSR fiber (can modify if
             % needed)
-            % - Where to calculate level??
+            % - Where to calculate level?
 
             dB_stim = 75;
             modelParams.tabs = 0.6e-3;
