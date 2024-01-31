@@ -1,4 +1,4 @@
-function [u_response,ABR_fs,dur] = calculateUR(response_onset, ihc_loss_flag,CF,modelParams)
+function [u_response,UR_fs,dur] = calculateUR(response_onset, ihc_loss_flag,CF,modelParams)
 
 if ~ihc_loss_flag %normal
      load("a0012_ABR_click.mat");   % MP CHANGE THIS BASED ON WHAT AS GIVES YOU
@@ -8,7 +8,7 @@ else
     
 end
 
-fs = ABR_fs;
+fs = ABR_fs; % = 48828
 t = (1:length(ABR))/ABR_fs;
 %click_onset = 7; %7ms ABR response onset
 amp_90dB = 20e-6 * 10^(90.0/20.0)/.7071;
@@ -39,7 +39,8 @@ ABR_resamp = resample(ABR,psth_fs,ABR_fs);
 
 psth_sum_sampled = psth_sum(1,1:length(ABR_resamp)); %match length of upsampled ABR
 % psth_sum_sampled  = psth_sum_sampled./max(psth_sum_sampled);
-%[UR_response, rem] = deconv(ABR_resamp,psth_sum_sampled);
+
 u_response = deconvtvl2(ABR_resamp, psth_sum_sampled, 100);
+UR_fs = psth_fs; 
 
 end
